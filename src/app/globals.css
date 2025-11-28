@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --background: #FFFFFF;
+}
+
+body {
+  background-color: var(--background);
+  color: #09261D; 
+}
+
+@layer utilities {
+  .text-stroke {
+    /* 1. Green Outline */
+    -webkit-text-stroke: 1.5px #004F2E; 
+    
+    /* 2. University Yellow Fill */
+    /* !important ensures it overrides the transparent setting */
+    color: #FFC82E !important; 
+  }
+}
