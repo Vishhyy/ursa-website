@@ -158,22 +158,21 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="p-6 md:p-12 bg-white">
-                    <ul className="grid gap-4 md:gap-6">
-                      {/* Using slice/map if needed or standard list */}
+                  <div className="p-8 md:p-12 bg-white">
+                    <ul className="grid gap-6">
                       {[
                         'The "Senate" comprises of a General Council, Executive Council, and Board of Trustees.',
-                        'The "Executive Council" manages logistics and communicates with external stakeholders.',
-                        'The "General Council" (legislative body) comprises Faculty Reps, Group Reps, and Exec Council.',
-                        'The General Council represents student interests and holds the executive accountable.',
-                        'The "Board of Trustees" provides financial oversight (2 students, 2 alumni, 2 community).',
-                        'Interim Executives shall NOT be eligible for re-election.',
+                        'The "Executive Council" comprises the President and Vice-Presidents, carries out logistical management and oversight and communicates with external stakeholders on behalf of the membership. They are required to report regularly to, and answer questions from, the General Council.',
+                        'The "General Council" is the legislative body of URSA. It comprises of Faculty Representatives, allocated by student population, Group Representatives, representing ratified student groups (i.e. societies, club), and the Executive Council as ex officio members.',
+                        'The General Council is intended to represent the interests and voices of the students, legislate on their behalf, and hold the executive accountable through various representations.',
+                        'The "Board of Trustees" comprises of six General Council-appointed members (2 student, 2 alumni, and 2 community members) to provide regular financial oversight.',
+                        'Interim Executives shall not be eligible for re-election come the regular voting period.',
                         'The Interim Executives receive no salary or honoraria.',
-                        'Hiring process of the General Manager includes checks to eliminate nepotism.'
+                        'The hiring process of the General Manager includes checks to ensure competency and eliminate nepotism.'
                       ].map((text, idx) => (
                         <li key={idx} className="flex gap-4 items-start group">
-                          <div className="mt-1 min-w-[20px] md:min-w-[24px]">
-                            <CheckCircle2 size={20} className="text-gold md:w-6 md:h-6" />
+                          <div className="mt-1 min-w-[24px]">
+                            <CheckCircle2 size={24} className="text-gold group-hover:fill-gold group-hover:text-white transition-all" />
                           </div>
                           <span className="text-sm md:text-base text-gray-700 font-medium leading-relaxed group-hover:text-black transition-colors">
                             {text}
