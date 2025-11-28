@@ -19,32 +19,36 @@ export default function Footer() {
         ]
     };
 
+    const socials = [
+        { icon: Facebook, href: "#" },
+        { icon: Instagram, href: "https://www.instagram.com/urstudentsassociation/" },
+        { icon: Linkedin, href: "#" },
+        { icon: Youtube, href: "#" },
+        { icon: Music, href: "#" } // TikTok placeholder
+    ];
+
     return (
         <footer className="bg-black text-white pt-12 md:pt-16 pb-8 border-t border-white/10 overflow-hidden">
             <div className="container mx-auto px-6">
 
                 <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-20">
 
-                    {/* 1. BRANDING (Bigger Logo, No Extra Text) */}
                     <div className="lg:w-1/4">
                         <Link href="/" className="group block">
-                            {/* Increased logo size significantly */}
-                            <div className="relative w-48 h-48 md:w-56 md:h-56">
+                            <div className="relative w-48 h-16 md:w-56 md:h-20 flex items-center">
                                 <Image
                                     src="/logo.png"
                                     alt="URSA Logo"
                                     fill
-                                    className="object-contain object-left group-hover:opacity-90 transition-opacity"
+                                    className="object-contain object-left group-hover:opacity-80 transition-opacity"
                                 />
                             </div>
-
-                            <p className="mt-4 text-gray-500 text-sm leading-snug max-w-xs">
-                                The official student voice of the University of Regina.
+                            <p className="mt-4 text-gray-500 text-sm leading-snug">
+                                The University of Regina Students&apos; Association.
                             </p>
                         </Link>
                     </div>
 
-                    {/* 2. LINKS COLUMNS */}
                     <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-10 w-full lg:w-auto">
                         <div className="flex flex-col gap-3">
                             {links.col1.map((link) => (
@@ -62,34 +66,29 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* 3. SOCIAL ICONS */}
                     <div className="lg:w-1/4 flex flex-col items-start lg:items-end gap-6">
                         <div className="flex gap-2">
-                            <SocialIcon icon={Facebook} />
-                            <SocialIcon icon={Instagram} />
-                            <SocialIcon icon={Linkedin} />
-                            <SocialIcon icon={Youtube} />
-                            <SocialIcon icon={Music} /> {/* Placeholder for TikTok */}
+                            {socials.map((social, i) => (
+                                <a
+                                    key={i}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-gold p-2 md:p-3 text-black hover:bg-white transition-colors duration-300"
+                                >
+                                    <social.icon size={24} strokeWidth={1.5} />
+                                </a>
+                            ))}
                         </div>
                     </div>
 
                 </div>
 
-                {/* 4. COPYRIGHT */}
                 <div className="mt-12 md:mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-end items-center text-sm text-gray-400">
                     <p className="text-center md:text-right">© 2025 URSA — University of Regina Students&apos; Association</p>
                 </div>
 
             </div>
         </footer>
-    );
-}
-
-// Helper component
-function SocialIcon({ icon: Icon }: { icon: any }) {
-    return (
-        <a href="#" className="bg-gold p-2 md:p-3 text-black hover:bg-white transition-colors duration-300">
-            <Icon size={24} strokeWidth={1.5} />
-        </a>
     );
 }
