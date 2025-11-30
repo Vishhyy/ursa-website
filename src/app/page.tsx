@@ -7,9 +7,12 @@ export default function Home() {
   return (
     <div className="pt-20 pb-0 relative">
 
-      {/* BACKGROUND TEXTURE */}
-      <div className="fixed inset-0 z-[-2] pointer-events-none opacity-[0.4]"
-        style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/concrete-wall.png")' }}>
+      {/* --- NEW BACKGROUND: CONSTELLATION WATERMARK --- */}
+      {/* Subtle lines connecting points, like the Big Dipper - adds University academic texture */}
+      <div className="fixed inset-0 z-[-2] pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23004F2E' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`
+        }}>
       </div>
 
       {/* --- HERO SECTION --- */}
@@ -131,12 +134,12 @@ export default function Home() {
                   <div className="bg-white p-6 md:p-8 rounded-sm shadow-md border-l-4 border-accent relative">
                     <Quote className="absolute top-4 left-4 text-gray-100 fill-gray-100 -z-10" size={60} />
                     <p className="italic text-gray-800 relative z-10">
-                      "URSA was created through ongoing collaboration between multiple student organizations who have been working together for months to protect student interests."
+                      "URSA was created through ongoing collaboration between multiple student organizations who have been working together for months to protect student interests and strengthen student representation on campus."
                     </p>
                   </div>
 
                   <p className="text-gray-600">
-                    During the interim period, URSA is focused on establishing foundational documents and building representative structures.
+                    During the interim period, URSA is focused on establishing foundational documents, building representative structures, and preparing for a fully elected student governance model.
                   </p>
                 </div>
               </FadeIn>
@@ -146,19 +149,26 @@ export default function Home() {
             <div className="xl:w-7/12 w-full">
               <FadeIn delay={0.2}>
                 <div className="bg-white rounded-lg shadow-2xl overflow-hidden border border-gray-200">
-                  <div className="bg-[#004F2E] p-6 md:p-12 border-b-8 border-gold">
+
+                  {/* 
+                      --- UPDATED HEADER (Glossy Green) --- 
+                      Changed: Used 'bg-constellation' and REMOVED the dark overlay div
+                  */}
+                  <div className="bg-constellation p-6 md:p-12 border-b-8 border-gold relative shadow-inner">
+
                     <div className="flex items-center gap-4 md:gap-6 text-white relative z-10">
-                      <div className="p-3 bg-white/10 rounded-full shrink-0">
-                        <ShieldCheck size={32} className="text-gold md:w-10 md:h-10" />
+                      <div className="p-3 bg-white/10 rounded-full shrink-0 shadow-lg border border-white/10">
+                        <ShieldCheck size={32} className="text-gold md:w-10 md:h-10 drop-shadow-md" />
                       </div>
                       <div>
-                        <h3 className="font-display font-black text-xl md:text-4xl uppercase tracking-wide mb-1">Key Features</h3>
-                        <p className="text-gold/80 font-bold tracking-widest text-[10px] md:text-xs uppercase">Of the Constitution</p>
+                        <h3 className="font-display font-black text-xl md:text-4xl uppercase tracking-wide mb-1 drop-shadow-md">
+                          Key Constitution Features
+                        </h3>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-8 md:p-12 bg-white">
+                  <div className="p-6 md:p-12 bg-white">
                     <ul className="grid gap-6">
                       {[
                         'The "Senate" comprises of a General Council, Executive Council, and Board of Trustees.',
@@ -172,7 +182,7 @@ export default function Home() {
                       ].map((text, idx) => (
                         <li key={idx} className="flex gap-4 items-start group">
                           <div className="mt-1 min-w-[24px]">
-                            <CheckCircle2 size={24} className="text-gold group-hover:fill-gold group-hover:text-white transition-all" />
+                            <CheckCircle2 size={24} className="text-gold group-hover:scale-110 transition-transform duration-200" />
                           </div>
                           <span className="text-sm md:text-base text-gray-700 font-medium leading-relaxed group-hover:text-black transition-colors">
                             {text}

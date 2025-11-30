@@ -1,16 +1,36 @@
 import FadeIn from "@/components/FadeIn";
 import Image from "next/image";
 
+// UPDATED: Used a highly stable Engineering stock photo (Industrial/Tech vibe)
 const groups = [
-    { name: "Engineering Society", image: "https://images.unsplash.com/photo-1581094794329-cd1096a78432?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Science Society", image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Arts Students Assoc.", image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Business Society", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Nursing Society", image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop" },
-    { name: "Education Society", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop" }
+    {
+        name: "Engineering Society",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+        name: "Science Society",
+        image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+        name: "Arts Students Assoc.",
+        image: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+        name: "Business Society",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+        name: "Nursing Society",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+        name: "Education Society",
+        image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop"
+    }
 ];
 
 export default function Groups() {
+    // Using Canadian Holiday calendar as placeholder until you add your specific URSA one
     const googleCalendarUrl = "https://calendar.google.com/calendar/embed?src=en.canadian%23holiday%40group.v.calendar.google.com&ctz=America%2FRegina&color=%23004F2E&showTitle=0&showPrint=0&showTabs=0&showCalendars=0";
 
     return (
@@ -36,7 +56,12 @@ export default function Groups() {
                 {groups.map((g, i) => (
                     <FadeIn key={i} delay={i * 0.05}>
                         <div className="relative aspect-video rounded-lg overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
-                            <Image src={g.image} alt={g.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                            <Image
+                                src={g.image}
+                                alt={g.name}
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
                             <div className="absolute inset-0 bg-accent/80 group-hover:bg-accent/70 transition-colors duration-300" />
                             <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
                                 <span className="font-display font-black text-white text-xl text-center uppercase tracking-wide drop-shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">{g.name}</span>

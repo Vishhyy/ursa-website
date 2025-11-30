@@ -7,18 +7,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // CHANGED: From Pure White to "Misty Grey" (Reduces Eye Strain)
-        background: "#EFF2EF", 
-        
-        // CHANGED: "Surface" is now White (Pop out effect)
+        // --- BACKGROUNDS ---
+        background: "#F0F4F8",        // Crisp White-Blue Tint (Clean)
         surface: "#FFFFFF", 
         surfaceHighlight: "#F4F4F5",
         
-        accent: "#004F2E",            // U of R Green
-        gold: "#FFC82E",              // U of R Gold
+        // --- THEME COLORS (DEEP NAVY & GOLD) ---
+        accent: "#0A2A4A",            // CHANGED: Much Darker, Richer Navy
+        gold: "#FFC72C",              // BRIGHT YELLOW/GOLD (Standard University Gold)
         
-        textMain: "#051F15",          // Softer Black (Deep Green-Black)
-        textMuted: "#5D6D65",         // Softer Grey
+        // --- TEXT ---
+        textMain: "#051626",          // Very dark blue-black for reading
+        textMuted: "#4B5563",         // Standard Slate Grey
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
@@ -28,4 +28,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;
