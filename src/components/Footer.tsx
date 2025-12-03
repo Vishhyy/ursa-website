@@ -1,97 +1,91 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Instagram, Linkedin, Youtube, Music } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
-    const links = {
-        col1: [
-            { name: "Newsroom", href: "https://www.uregina.ca/media/index.html" },
-            { name: "Careers", href: "https://www.uregina.ca/hr/careers/index.html" },
-            { name: "Contact U of R", href: "https://www.uregina.ca/contact.html" },
-            { name: "Campus Maps", href: "https://www.uregina.ca/maps/index.html" }
-        ],
-        col2: [
-            { name: "Policies", href: "https://www.uregina.ca/policy/" },
-            { name: "Privacy & Terms of Use", href: "https://www.uregina.ca/terms-of-use.html" },
-            { name: "Student Central", href: "https://www.uregina.ca/student/registrar/" },
-            { name: "UR Source", href: "https://ursource.uregina.ca/" }
-        ]
-    };
+
+    const siteLinks = [
+        { name: "Home", href: "/" },
+        { name: "Interim Team", href: "/leadership" },
+        { name: "Student Groups", href: "/groups" },
+        { name: "Documents", href: "/documents" },
+        { name: "Contact", href: "/contact" },
+    ];
 
     const socials = [
-        { icon: Facebook, href: "#" },
         { icon: Instagram, href: "https://www.instagram.com/urstudentsassociation/" },
-        { icon: Linkedin, href: "#" },
-        { icon: Youtube, href: "#" },
-        { icon: Music, href: "#" }
+        { icon: Facebook, href: "#" },
+        { icon: Twitter, href: "#" },
     ];
 
     return (
-        // REVERTED: Solid Black Background (Removed 'bg-constellation')
-        <footer className="bg-black text-white pt-12 md:pt-16 pb-8 border-t border-white/10 overflow-hidden">
+        // Changed background to Black, kept Gold top border for branding
+        <footer className="bg-black text-white border-t-4 border-gold pt-16 pb-8">
             <div className="container mx-auto px-6">
 
-                <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-20">
+                {/* 3-Column Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
 
-                    {/* BRANDING */}
-                    <div className="lg:w-1/4">
-                        <Link href="/" className="group block">
-                            <div className="relative w-48 h-32 md:w-56 md:h-32">
+                    {/* Column 1: Branding */}
+                    <div className="flex flex-col items-start">
+                        <Link href="/" className="group block mb-6">
+                            <div className="relative w-40 h-20">
                                 <Image
                                     src="/logo.png"
                                     alt="URSA Logo"
                                     fill
-                                    className="object-contain object-left group-hover:opacity-90 transition-opacity"
+                                    className="object-contain object-left opacity-90 group-hover:opacity-100 transition-opacity"
                                 />
                             </div>
-
-                            <p className="mt-4 text-gray-500 text-sm leading-snug">
-                                The University of Regina Students&apos; Association.
-                            </p>
                         </Link>
+                        <p className="text-gray-400 text-sm leading-relaxed max-w-xs font-medium">
+                            University of Regina Students' Association
+                        </p>
                     </div>
 
-                    {/* LINKS */}
-                    <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-10 w-full lg:w-auto">
-                        <div className="flex flex-col gap-3">
-                            {links.col1.map((link) => (
-                                <Link key={link.name} href={link.href} target="_blank" className="font-display font-bold text-lg md:text-xl hover:underline hover:text-gold transition-colors">
-                                    {link.name}
-                                </Link>
-                            ))}
-                        </div>
-                        <div className="flex flex-col gap-3">
-                            {links.col2.map((link) => (
-                                <Link key={link.name} href={link.href} target="_blank" className="font-display font-bold text-lg md:text-xl hover:underline hover:text-gold transition-colors">
-                                    {link.name}
-                                </Link>
-                            ))}
+                    {/* Column 2: Navigation */}
+                    <div className="flex flex-col items-start md:items-center">
+                        <div className="flex flex-col gap-4">
+                            {/* Gold Header makes it pop against the black */}
+                            <h4 className="font-display font-bold text-lg text-gold uppercase tracking-widest">Explore</h4>
+                            <div className="flex flex-col gap-3">
+                                {siteLinks.map((link) => (
+                                    <Link key={link.name} href={link.href} className="text-gray-400 hover:text-white hover:underline transition-colors">
+                                        {link.name}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    {/* SOCIALS */}
-                    <div className="lg:w-1/4 flex flex-col items-start lg:items-end gap-6">
-                        <div className="flex gap-2">
-                            {socials.map((social, i) => (
-                                <a
-                                    key={i}
-                                    href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-gold p-2 md:p-3 text-black hover:bg-white transition-colors duration-300"
-                                >
-                                    <social.icon size={24} strokeWidth={1.5} />
-                                </a>
-                            ))}
+                    {/* Column 3: Connect */}
+                    <div className="flex flex-col items-start md:items-end">
+                        <div className="flex flex-col gap-4">
+                            <h4 className="font-display font-bold text-lg text-gold uppercase tracking-widest">Connect</h4>
+                            <div className="flex gap-4">
+                                {socials.map((social, i) => (
+                                    <a
+                                        key={i}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        // Gold buttons with Black icons look very premium
+                                        className="bg-gold p-3 text-black hover:bg-white transition-colors duration-300 rounded-sm"
+                                    >
+                                        <social.icon size={20} strokeWidth={2} />
+                                    </a>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
-                {/* COPYRIGHT */}
-                <div className="mt-12 md:mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-end items-center text-sm text-gray-400">
-                    <p className="text-center md:text-right">© 2025 URSA — University of Regina Students&apos; Association</p>
+                {/* --- Bottom Copyright Bar --- */}
+                <div className="mt-16 pt-8 border-t border-white/10 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p>© 2025 URSA — University of Regina Students&apos; Association</p>
+                    <p className="text-xs">Est. 2025</p>
                 </div>
 
             </div>

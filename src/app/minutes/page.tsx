@@ -21,7 +21,7 @@ async function getMeetingMinutes() {
         const drive = google.drive({ version: 'v3', auth });
 
         // 2. FOLDER ID (Paste your specific ID here)
-        const folderId = '1ibHEfuxVUC0ScpY4fNEgq3kDpqqRQkvJ';
+        const folderId = '1QW9EFhe2CrcD6iE9FyMdCF_QS7j1Jijp';
 
         // 3. FETCH FILES
         const response = await drive.files.list({
