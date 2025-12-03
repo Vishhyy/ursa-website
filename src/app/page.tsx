@@ -1,7 +1,7 @@
 import FadeIn from "@/components/FadeIn";
 import Link from "next/link";
 import Image from "next/image";
-import { Eye, ShieldCheck, Users, ChevronRight, CheckCircle2, Quote } from "lucide-react";
+import { Eye, ShieldCheck, Users, ChevronRight, CheckCircle2, Quote, Calendar } from "lucide-react";
 
 export default function Home() {
   return (
@@ -53,6 +53,13 @@ export default function Home() {
               </Link>
               <Link href="/leadership" className="w-full md:w-auto px-8 py-4 bg-white border-2 border-white text-accent font-bold uppercase text-sm tracking-widest hover:bg-accent hover:text-white hover:border-accent transition-colors flex items-center gap-2 justify-center rounded-sm shadow-xl">
                 Meet The Team
+              </Link>
+              {/* BUTTON 3: EVENT (GOLD) - VISIBILITY FIX */}
+              <Link
+                href="/events"
+                className="w-full md:w-auto px-8 py-4 bg-gold border-2 border-gold text-accent font-bold uppercase text-sm tracking-widest hover:bg-accent hover:text-white hover:border-accent transition-colors flex items-center gap-2 justify-center rounded-sm shadow-xl"
+              >
+                Upcoming Events <Calendar size={16} />
               </Link>
             </div>
           </FadeIn>

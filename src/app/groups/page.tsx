@@ -31,7 +31,7 @@ const groups = [
 
 export default function Groups() {
     // Using Canadian Holiday calendar as placeholder until you add your specific URSA one
-    const googleCalendarUrl = "https://calendar.google.com/calendar/embed?src=en.canadian%23holiday%40group.v.calendar.google.com&ctz=America%2FRegina&color=%23004F2E&showTitle=0&showPrint=0&showTabs=0&showCalendars=0";
+    const googleCalendarUrl = "https://calendar.google.com/calendar/embed?src=urstudentassociation%40gmail.com&ctz=America%2FRegina&color=%23004F2E&showTitle=0&showPrint=0&showTabs=0&showCalendars=0";
 
     return (
         <div className="pt-32 pb-20 px-6 container mx-auto relative min-h-screen">
@@ -73,7 +73,7 @@ export default function Groups() {
             </div>
 
             {/* CALENDAR */}
-            <FadeIn>
+            {/* <FadeIn>
                 <div className="bg-white/80 backdrop-blur-md border-t-8 border-accent shadow-xl rounded-lg overflow-hidden p-6 md:p-10">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 pb-4 border-b border-gray-200">
                         <div>
@@ -86,7 +86,7 @@ export default function Groups() {
                         <iframe src={googleCalendarUrl} style={{ border: 0 }} width="100%" height="100%" frameBorder="0" scrolling="no" className="absolute inset-0 w-full h-full"></iframe>
                     </div>
                 </div>
-            </FadeIn>
+            </FadeIn> */}
         </div>
     );
 }
