@@ -27,7 +27,7 @@ export default function Navbar() {
          MAIN DESKTOP BAR 
          - Keeps 'bg-constellation' for that shiny starry look you liked on desktop.
       */}
-            <nav className="fixed top-0 w-full z-50 bg-[#0A2A4A] bg-constellation text-white shadow-lg border-b-4 border-gold">
+            <nav className="fixed top-0 w-full z-50 bg-[#004F2E] bg-constellation text-white shadow-lg border-b-4 border-gold">
 
                 <div className="container mx-auto px-6 h-24 flex justify-between items-center relative z-20">
 
@@ -80,10 +80,10 @@ export default function Navbar() {
          - Kept solid 'bg-[#0A2A4A]' so it is a clean, readable Deep Blue block.
       */}
             {isOpen && (
-                <div className="fixed inset-0 top-24 z-40 bg-[#0A2A4A] lg:hidden flex flex-col p-8 gap-6 animate-in fade-in duration-200 border-t border-white/10">
+                <div className="fixed inset-0 top-24 z-40 bg-[#004F2E] lg:hidden flex flex-col p-8 gap-6 animate-in fade-in duration-200 border-t border-white/10">
 
                     {/* Dark solid overlay ensuring no texture bleeds through */}
-                    <div className="absolute inset-0 bg-[#0A2A4A] z-[-1]" />
+                    <div className="absolute inset-0 bg-[#004F2E] z-[-1]" />
 
                     {navItems.map((item) => (
                         <Link
