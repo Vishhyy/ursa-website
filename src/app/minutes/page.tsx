@@ -1,33 +1,26 @@
 import { google } from 'googleapis';
 import FadeIn from "@/components/FadeIn";
-import { FileText, Download, ExternalLink, CalendarDays } from 'lucide-react';
+import { FileText, ExternalLink, CalendarDays } from 'lucide-react';
 import { format } from 'date-fns';
 
-// Re-check for new files every hour
 export const revalidate = 3600;
 
 async function getMeetingMinutes() {
     try {
-        // 1. AUTHENTICATION (From Vercel Env Var)
-        // If running locally, you might need to create a .env.local file with the JSON content too
         const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS || '{}');
-
-        if (!credentials.client_email) return []; // Safety check
+        if (!credentials.client_email) return [];
 
         const auth = new google.auth.GoogleAuth({
             credentials,
             scopes: ['https://www.googleapis.com/auth/drive.readonly'],
         });
         const drive = google.drive({ version: 'v3', auth });
+        const folderId = '1QW9EFhe2CrcD6iE9FyMdCF_QS7j1Jijp'; // Your Folder ID
 
-        // 2. FOLDER ID (Paste your specific ID here)
-        const folderId = '1QW9EFhe2CrcD6iE9FyMdCF_QS7j1Jijp';
-
-        // 3. FETCH FILES
         const response = await drive.files.list({
             q: `'${folderId}' in parents and trashed = false`,
             fields: 'files(id, name, webViewLink, createdTime, mimeType)',
-            orderBy: 'createdTime desc', // Newest first
+            orderBy: 'createdTime desc',
         });
 
         return response.data.files || [];
@@ -43,15 +36,16 @@ export default async function MeetingMinutes() {
     return (
         <div className="pt-32 px-6 container mx-auto pb-20 relative min-h-screen">
 
-            {/* Background elements */}
+            {/* --- UNIFIED BACKGROUND THEME --- */}
             <div className="fixed inset-0 bg-gray-50/50 z-[-2] pointer-events-none" />
-            <div className="fixed top-[-10%] left-[20%] w-[500px] h-[500px] bg-accent/5 rounded-full blur-[80px] pointer-events-none z-[-1]" />
+            <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
+            <div className="fixed bottom-0 left-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none z-[-1]" />
 
             <FadeIn>
                 <div className="border-l-4 border-accent pl-8 mb-20">
                     <h1 className="font-display font-black text-5xl md:text-7xl uppercase mb-4 text-accent">Meeting Minutes</h1>
                     <p className="text-gray-600 max-w-xl text-lg">
-                        Official records from URSA General and Executive meetings. Updated automatically from our drive.
+                        Official records from URSA General and Executive meetings. Updated automatically.
                     </p>
                 </div>
             </FadeIn>

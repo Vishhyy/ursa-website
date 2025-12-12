@@ -1,7 +1,6 @@
 import FadeIn from "@/components/FadeIn";
 import Image from "next/image";
 
-// UPDATED: Used a highly stable Engineering stock photo (Industrial/Tech vibe)
 const groups = [
     {
         name: "Engineering Society",
@@ -30,16 +29,13 @@ const groups = [
 ];
 
 export default function Groups() {
-    // Using Canadian Holiday calendar as placeholder until you add your specific URSA one
-    const googleCalendarUrl = "https://calendar.google.com/calendar/embed?src=urstudentassociation%40gmail.com&ctz=America%2FRegina&color=%23004F2E&showTitle=0&showPrint=0&showTabs=0&showCalendars=0";
-
     return (
         <div className="pt-32 pb-20 px-6 container mx-auto relative min-h-screen">
 
-            {/* --- AMBIENT BG --- */}
-            <div className="fixed top-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none z-[-1]" />
-            <div className="fixed bottom-0 right-0 w-[700px] h-[700px] bg-gold/5 rounded-full blur-[120px] pointer-events-none z-[-1]" />
+            {/* --- UNIFIED BACKGROUND THEME --- */}
             <div className="fixed inset-0 bg-gray-50/50 z-[-2] pointer-events-none" />
+            <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
+            <div className="fixed bottom-0 left-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none z-[-1]" />
 
             {/* HEADER */}
             <FadeIn>
@@ -71,22 +67,6 @@ export default function Groups() {
                     </FadeIn>
                 ))}
             </div>
-
-            {/* CALENDAR */}
-            {/* <FadeIn>
-                <div className="bg-white/80 backdrop-blur-md border-t-8 border-accent shadow-xl rounded-lg overflow-hidden p-6 md:p-10">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 pb-4 border-b border-gray-200">
-                        <div>
-                            <h2 className="font-display font-bold text-3xl md:text-4xl text-accent mb-2">Event Calendar</h2>
-                            <p className="text-gray-500">Live updates from URSA and Campus Groups.</p>
-                        </div>
-                        <a href="https://calendar.google.com" target="_blank" className="mt-4 md:mt-0 px-6 py-2 bg-gold text-accent font-bold uppercase text-xs tracking-widest hover:bg-accent hover:text-white transition-colors rounded-sm">+ Add to Google</a>
-                    </div>
-                    <div className="w-full h-[600px] bg-gray-50 rounded-sm border border-gray-200 relative">
-                        <iframe src={googleCalendarUrl} style={{ border: 0 }} width="100%" height="100%" frameBorder="0" scrolling="no" className="absolute inset-0 w-full h-full"></iframe>
-                    </div>
-                </div>
-            </FadeIn> */}
         </div>
     );
 }

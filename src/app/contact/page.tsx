@@ -5,9 +5,10 @@ export default function Contact() {
     return (
         <div className="pt-24 md:pt-32 px-6 container mx-auto min-h-[80vh] flex flex-col items-center justify-center text-center relative">
 
-            {/* --- BACKGROUND GLOW --- */}
-            <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-accent/5 rounded-full blur-[60px] md:blur-[100px] z-[-1]" />
+            {/* --- UNIFIED BACKGROUND THEME --- */}
             <div className="fixed inset-0 bg-gray-50/50 z-[-2] pointer-events-none" />
+            <div className="fixed top-0 right-0 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
+            <div className="fixed bottom-0 left-0 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[120px] pointer-events-none z-[-1]" />
 
             <FadeIn>
                 <h1 className="font-display font-black text-5xl md:text-8xl uppercase mb-6 md:mb-8 text-accent">
@@ -27,7 +28,7 @@ export default function Contact() {
 
                 <div className="flex justify-center gap-6 md:gap-8 mt-12 md:mt-16 pb-12">
 
-                    {/* INSTAGRAM (Updated Link) */}
+                    {/* INSTAGRAM */}
                     <a
                         href="https://www.instagram.com/urstudentsassociation/"
                         target="_blank"
