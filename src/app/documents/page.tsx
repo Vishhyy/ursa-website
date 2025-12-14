@@ -5,6 +5,11 @@ import {
     Scale
 } from "lucide-react";
 
+export const metadata = {
+    title: "Documents & Constitution",
+    description: "Read the URSA Constitution, Ratification Policy, and operational documents.",
+};
+
 export default function Documents() {
 
     // Data list

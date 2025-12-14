@@ -1,5 +1,10 @@
 import FadeIn from "@/components/FadeIn";
 
+export const metadata = {
+    title: "Events Calendar",
+    description: "Upcoming meetings, town halls, and social events at the University of Regina.",
+};
+
 export default function Events() {
     // 1. We insert your NEW calendar ID here
     // 2. Added 'mode=AGENDA' for mobile users (optional, but often reads better)

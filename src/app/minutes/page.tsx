@@ -5,6 +5,11 @@ import { format } from 'date-fns';
 
 export const revalidate = 3600;
 
+export const metadata = {
+    title: "Meeting Minutes",
+    description: "Transparency record. Download official meeting minutes from the Executive Council.",
+};
+
 async function getMeetingMinutes() {
     try {
         const credentials = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_CREDENTIALS || '{}');

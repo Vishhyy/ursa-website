@@ -40,6 +40,11 @@ const leaders = [
     }
 ];
 
+export const metadata = {
+    title: "Interim Executive Team",
+    description: "Meet the student leaders guiding URSA through the transition period.",
+};
+
 export default function Leadership() {
     return (
         <div className="pt-32 pb-20 px-6 container mx-auto relative min-h-screen">
