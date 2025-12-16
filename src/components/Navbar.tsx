@@ -9,6 +9,7 @@ import { clsx } from "clsx";
 // Find the navItems array at the top and add "Events"
 const navItems = [
     { name: "Home", path: "/" },
+    { name: "Statements", path: "/statements" },
     { name: "Events", path: "/events" }, // <--- Insert this new line
     { name: "Leadership", path: "/leadership" },
     { name: "Groups", path: "/groups" },
