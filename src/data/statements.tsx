@@ -15,7 +15,7 @@ export const allStatements: Statement[] = [
         slug: "referendum-results",
         title: "Official Statement: Referendum Victory",
         date: "December 16, 2025",
-        image: "/statements/statement-dec16.jpg",
+        image: "/statements/statement-dec16.png",
         summary: "URSA is honoured to announce that students have voted >91% in favour of recognizing URSA as the new representative body.",
         content: (
             <>
@@ -68,11 +68,10 @@ export const allStatements: Statement[] = [
                     Thank you to all who voted, whichever way you cast your vote. We will endeavor, over the next few months, to reinvigorate trust in student democracy and hope that the team elected in March will enjoy record turnout. Until then, please, get involved! There will be many important roles to fill in the weeks to come, and we look forward to hearing from everyone who wishes to fill them!
                 </p>
 
-                {/* UPDATED FOOTER TO MATCH OLD STYLE */}
-                <div className="mt-8 pt-8 border-t border-gray-200">
-                    <strong>Media Contact:</strong><br />
-                    URSA Interim Executive Team<br />
-                    <a href="mailto:urstudentassociation@gmail.com" className="text-accent hover:text-gold font-bold transition-colors">urstudentassociation@gmail.com</a>
+                <div className="mt-12 pt-8 border-t border-gray-200 text-sm text-gray-500 bg-gray-50 p-6 rounded-md">
+                    <strong className="block text-accent uppercase tracking-widest text-xs mb-2">Media Contact</strong>
+                    URSA President<br />
+                    <a href="mailto:president@ursa-students.ca" className="text-accent hover:text-gold font-bold transition-colors border-b border-accent/20">president@ursa-students.ca</a>
                 </div>
             </>
         )
@@ -117,8 +116,8 @@ export const allStatements: Statement[] = [
 
                 <div className="mt-8 pt-8 border-t border-gray-200">
                     <strong>Media Contact:</strong><br />
-                    URSA Interim Team<br />
-                    <a href="mailto:urstudentassociation@gmail.com" className="text-accent hover:text-gold font-bold transition-colors">urstudentassociation@gmail.com</a>
+                    URSA President<br />
+                    <a href="mailto:president@ursa-students.ca" className="text-accent hover:text-gold font-bold transition-colors">president@ursa-students.ca</a>
                 </div>
             </>
         )
