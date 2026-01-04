@@ -33,7 +33,7 @@ const contacts = [
 ];
 
 export const metadata = {
-    title: "Contact | URSA",
+    title: "Contact",
     description: "Contact the URSA Executive Team. Find email addresses for the President and Vice Presidents.",
 };
 

@@ -47,6 +47,11 @@ const leaders = [
     }
 ];
 
+export const metadata = {
+    title: "Leadership", // <--- Clean. Layout adds " | URSA" automatically.
+    description: "Meet the Interim Executive Team guiding URSA.",
+};
+
 export default function Leadership() {
     return (
         <div className="pt-32 pb-20 px-6 container mx-auto relative min-h-screen">

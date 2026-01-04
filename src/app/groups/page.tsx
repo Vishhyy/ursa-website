@@ -2,7 +2,7 @@ import FadeIn from "@/components/FadeIn";
 import GroupDirectory from "@/components/GroupDirectory";
 
 export const metadata = {
-    title: "Student Groups & Societies | URSA",
+    title: "Student Groups & Societies",
     description: "Directory of U of R student societies, clubs, and federated colleges.",
 };
 

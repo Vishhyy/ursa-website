@@ -13,13 +13,13 @@ type Props = {
 
 // 1. DYNAMIC METADATA (Async Fix)
 export async function generateMetadata(props: Props): Promise<Metadata> {
-    const params = await props.params; // <--- WE MUST AWAIT IT
+    const params = await props.params;
     const post = allStatements.find((s) => s.slug === params.slug);
 
     if (!post) return { title: "Statement Not Found" };
 
     return {
-        title: `${post.title} | URSA`,
+        title: post.title, // <--- Just the title. Next.js adds " | URSA" automatically.
         description: post.summary,
     };
 }
