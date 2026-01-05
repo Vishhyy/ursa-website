@@ -10,7 +10,7 @@ export type Statement = {
 };
 
 export const allStatements: Statement[] = [
-    // --- 1. NEW VICTORY STATEMENT (Dec 16) ---
+    // --- 1. REFERENDUM VICTORY STATEMENT (Dec 16) ---
     {
         slug: "referendum-results",
         title: "Official Statement: Referendum Victory",
@@ -70,8 +70,8 @@ export const allStatements: Statement[] = [
 
                 <div className="mt-12 pt-8 border-t border-gray-200 text-sm text-gray-500 bg-gray-50 p-6 rounded-md">
                     <strong className="block text-accent uppercase tracking-widest text-xs mb-2">Media Contact</strong>
-                    URSA President<br />
-                    <a href="mailto:president@ursa-students.ca" className="text-accent hover:text-gold font-bold transition-colors border-b border-accent/20">president@ursa-students.ca</a>
+                    URSA General Inquiries<br />
+                    <a href="mailto:info@ursa-students.ca" className="text-accent hover:text-gold font-bold transition-colors border-b border-accent/20">info@ursa-students.ca</a>
                 </div>
             </>
         )
@@ -116,8 +116,8 @@ export const allStatements: Statement[] = [
 
                 <div className="mt-8 pt-8 border-t border-gray-200">
                     <strong>Media Contact:</strong><br />
-                    URSA President<br />
-                    <a href="mailto:president@ursa-students.ca" className="text-accent hover:text-gold font-bold transition-colors">president@ursa-students.ca</a>
+                    URSA General Inquiries<br />
+                    <a href="mailto:info@ursa-students.ca" className="text-accent hover:text-gold font-bold transition-colors">info@ursa-students.ca</a>
                 </div>
             </>
         )

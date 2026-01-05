@@ -2,13 +2,19 @@ import FadeIn from "@/components/FadeIn";
 import { Mail, Instagram, Twitter, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-// UPDATED EXECUTIVE CONTACT LIST
+// UPDATED LIST
 const contacts = [
     {
+        role: "General Inquiries",
+        desc: "For general questions about URSA, partnerships, media, or press.",
+        email: "info@ursa-students.ca",
+        isPrimary: true // This will now highlight this card as the main one
+    },
+    {
         role: "President",
-        desc: "For general inquiries, strategic leadership, and official representation.",
+        // Removed "General Inquiries" from description
+        desc: "For inquiries regarding governance, strategy, and official representation.",
         email: "president@ursa-students.ca",
-        isPrimary: true // This will highlight the card
     },
     {
         role: "VP Internal",
@@ -34,7 +40,7 @@ const contacts = [
 
 export const metadata = {
     title: "Contact",
-    description: "Contact the URSA Executive Team. Find email addresses for the President and Vice Presidents.",
+    description: "Contact URSA. Email us for general inquiries or reach out to specific executive members.",
 };
 
 export default function Contact() {
@@ -53,13 +59,12 @@ export default function Contact() {
                         Contact Us
                     </h1>
                     <p className="text-gray-600 max-w-2xl mx-auto text-lg font-medium">
-                        We want to hear from students. Contact the relevant executive member below or connect with us on social media.
+                        We want to hear from students. Contact our general line or reach specific executives below.
                     </p>
                 </div>
             </FadeIn>
 
             {/* --- CONTACT DIRECTORY GRID --- */}
-            {/* Using max-w-5xl to accommodate the odd number of cards nicely */}
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 items-start">
                 {contacts.map((contact, i) => (
                     <FadeIn key={contact.email} delay={0.1 * (i + 1)}>
@@ -68,12 +73,12 @@ export default function Contact() {
                             className={`
                                 group flex flex-col h-full bg-white p-8 rounded-lg shadow-sm transition-all duration-300
                                 ${contact.isPrimary
-                                    ? 'border-2 border-accent hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden md:col-span-2' // President spans 2 cols on Desktop
+                                    ? 'border-2 border-accent hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden md:col-span-2' // General Inquiries spans 2 cols
                                     : 'border border-gray-200 hover:border-gold hover:shadow-xl hover:-translate-y-1'
                                 }
                             `}
                         >
-                            {/* Primary Background Accent for President */}
+                            {/* Accent Glow for the Primary Card */}
                             {contact.isPrimary && <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />}
 
                             <div className="flex items-center gap-4 mb-4">
