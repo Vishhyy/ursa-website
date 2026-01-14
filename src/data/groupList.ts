@@ -200,8 +200,8 @@ export const groupList: GroupContact[] = [
     {
         category: "Academic Society",
         name: "Regina Engineering Students' Society (RESS)",
-        instagram: "reginaengg",
-        email: "contact@ress.ca",
+        instagram: "uofr_engsoc",
+        email: "ress.president@uregina.ca",
         keyPerson: "President"
     },
     {
